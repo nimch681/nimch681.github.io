@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .invitation-card {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 60px 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invitation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #d4af37, #f4e4c1, #d4af37);
+        }
+
+        .ornament {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .ampersand {
+            font-size: 36px;
+            color: #d4af37;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 30px auto;
+        }
+
+        .event-section {
+            margin: 35px 0;
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .event-title {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .event-details {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .date {
+            font-size: 18px;
+            color: #d4af37;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .location {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .tbd {
+            color: #95a5a6;
+            font-style: italic;
+        }
+
+        .rsvp-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: #fff9e6;
+            border-radius: 8px;
+            border: 2px dashed #d4af37;
+        }
+
+        .rsvp-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .rsvp-date {
+            font-size: 18px;
+            color: #d4af37;
+            font-weight: 600;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background: #d4af37;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .rsvp-button:hover {
+            background: #b8941f;
+        }
+
+        .footer-note {
+            margin-top: 35px;
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .decorative-hearts {
+            font-size: 20px;
+            color: #d4af37;
+            margin: 20px 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .invitation-card {
+                box-shadow: none;
+                max-width: 100%;
+                page-break-after: avoid;
+            }
+
+            .rsvp-button {
+                display: none;
+            }
+        }
+
+        /* Print-friendly version toggle */
+        .print-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .print-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .print-btn:hover {
+            background: #34495e;
+        }
+
+        @media print {
+            .print-controls {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-controls">
+        <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    </div>
+
+    <div class="invitation-card">
+        <div class="ornament">✦</div>
+        
+        <div class="tagline">Together with their families</div>
+        
+        <h1>Chontira</h1>
+        <div class="ampersand">&</div>
+        <h1>Robin</h1>
+        
+        <div class="decorative-hearts">♥ ♥ ♥</div>
+        
+        <div class="tagline">Request the pleasure of your company at their wedding</div>
+        
+        <div class="divider"></div>
+        
+        <div class="event-section">
+            <div class="event-title">Wedding Ceremony</div>
+            <div class="event-details">
+                <div class="date">Friday, 4th December 2026</div>
+                <div class="location">
+                    55/25, M4, Bangmak, Kantang<br>
+                    Trang, Thailand 92110
+                </div>
+            </div>
+        </div>
+        
+        <div class="event-section">
+            <div class="event-title">Beach Wedding Party</div>
+            <div class="event-details">
+                <div class="date">Sunday, 6th December 2026</div>
+                <div class="location tbd">
+                    Location to be determined<br>
+                    Details to follow
+                </div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="rsvp-section">
+            <div class="rsvp-title">RSVP</div>
+            <div>Please respond by</div>
+            <div class="rsvp-date">31st January 2026</div>
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="rsvp-button" target="_blank">Click Here to RSVP</a>
+        </div>
+        
+        <div class="footer-note">
+            More details will follow
+        </div>
+        
+        <div class="ornament" style="margin-top: 30px; margin-bottom: 0;">✦</div>
+    </div>
+</body>
+</html>
